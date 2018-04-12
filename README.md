@@ -39,7 +39,7 @@ The user dashboard also offers the `/token` path, where the user can get a valid
 
 ![Screenshot](https://github.com/stefanosbou/dashboard-with-flink-streaming/raw/master/screenshot.png)
 
-![Screenshot](https://github.com/stefanosbou/dashboard-with-flink-streaming/raw/master/token-generator.png)
+![Screenshot](https://github.com/stefanosbou/dashboard-with-flink-streaming/raw/master/generate-token.png)
 
 ## Live Example
 
