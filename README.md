@@ -29,7 +29,7 @@ In the aggregation component, we consume all the events from the Apache Kafka `o
 * Group by `originatingCountry` field, in order to present the volume of orders per country.
 * Group by currency pair `currencyFrom/currencyTo`, in order to present the volume of orders per currency pairs.
 
-**Apache Flink was selected because it required less memory than Apache Spark and was able to be executed in a micro instance in AWS. The same logic (aggregation and data storage to RethinkDB) was also implemented using Apache Spark, but wasn't able to execute it in AWS micro instance for demo.**
+**Apache Flink was selected because it required less memory than Apache Spark and was able to be executed in a micro instance in AWS (not meaning that it runs smoothly. It still requires considerable amount of memory for a micro instance and there are times that aggregator component and Kafka terminate due to low memory). The same logic (aggregation and data storage to RethinkDB) was also implemented using Apache Spark, but wasn't able to execute it in AWS micro instance for demo.**
 
 As a final step, we create the presentation dashboard where the user can see the aggregated data. This component is created using HTML, JavaScript and WebSockets to communicate with other components and get the necessary data. As mentioned above, there is the `/eventbus` endpoint where the user client (Web browser) subscribes to the `updates` websocket channel and receives updates when new data is pushed to RethinkDB. The dashboard consists of a global map with a realtime visualisation of messages being processed, a counter of the number of messages being processed and a pie chart of the number of messages per currency pair being processed.
 
