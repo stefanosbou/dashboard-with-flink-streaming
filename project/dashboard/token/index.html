@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/cerulean/bootstrap.min.css">
+<style>
+.btn {
+   margin-bottom: 10px;
+}
+.well {
+   text-align: center;
+}
+</style>
+</head>
+
+<body>
+    <div class="container" style="padding-top:250px;">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-md-offset-4">
+                <div class="account-wall">
+                    <div id="my-tab-content" class="tab-content">
+                        <div class="tab-pane active">
+                           <div id="generate-token" class="btn btn-lg btn-primary btn-block">Generate token</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	<div class="row">
+            <div class="col-sm-12 col-md-12">
+                <div class="account-wall">
+                    <div id="my-tab-content" class="tab-content">
+                        <div class="tab-pane" id="token">
+                           <div class="well"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#generate-token").click(function(){
+	    var url = '/api/token';
+	    $.post(url, function(data, status){
+		$(".well").html(data);
+		$("#token").addClass("active");
+	    });
+	}); 
+}); 
+</script>
+</html>

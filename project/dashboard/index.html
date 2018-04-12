@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/cerulean/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-header"><a class="navbar-brand" href="/">Real-Time Dashboard</a></div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav"></ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" style="margin-top:80px">
+            <div class="col-md-9">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Orders per country</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div id="map" style="min-height:450px"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Orders Count</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div style="min-height:150px;display:table;width:100%;text-align:center"><span id="orders-count" style="font-size:7em;display:table-cell;vertical-align:middle;text-align:center;">0</span></div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Orders per currency pair</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div id="currency-pairs" style="min-height:213px"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/vertx/3.5.1/vertx-eventbus.min.js"></script>
+<script src="/js/highcharts.js"></script>
+<script src="/js/highcharts-more.js"></script>
+<script src="/js/map/map.js"></script>
+<script src="/js/map/data.js"></script>
+<script src="/js/map/world.js"></script>
+<script src="/js/main.js"></script>
+
+</html>

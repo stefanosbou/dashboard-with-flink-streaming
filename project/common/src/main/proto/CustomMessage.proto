@@ -1,0 +1,16 @@
+package orders;
+
+option java_package = "io.github.stefanosbou.kafka.custom.message";
+option java_outer_classname = "CustomMessage";
+option optimize_for = SPEED;
+
+message Order {
+  required int32 userId = 1;
+  required string currencyFrom = 2;
+  required string currencyTo = 3;
+  required float amountSell = 4;
+  required float amountBuy = 5;
+  required float rate = 6;
+  required string timePlaced = 7;
+  required string originatingCountry = 8;
+}

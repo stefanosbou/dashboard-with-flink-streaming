@@ -1,0 +1,19 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+
+project/common/.idea
+project/common/common.iml
+project/common/target
+project/common/dependency-reduced-pom.xml
+
+project/api-server/.idea
+project/api-server/.vertx
+project/api-server/api-server.iml
+project/api-server/target
+project/api-server/dependency-reduced-pom.xml
+
+
+project/aggregator/.idea
+project/aggregator/aggregator.iml
+project/aggregator/target
+project/aggregator/dependency-reduced-pom.xml
+
