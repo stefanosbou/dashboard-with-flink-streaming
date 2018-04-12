@@ -10,7 +10,6 @@ import org.apache.flink.streaming.api.CheckpointingMode;
 import org.apache.flink.streaming.api.TimeCharacteristic;
 import org.apache.flink.streaming.api.datastream.*;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
-import org.apache.flink.streaming.api.functions.ProcessFunction;
 import org.apache.flink.streaming.api.windowing.time.Time;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer010;
 
@@ -54,7 +53,6 @@ public class FlinkAggregator {
    }
 
    private static SingleOutputStreamOperator<Tuple2<String, Integer>> calculateTotalOrders(DataStream<CustomMessage.Order> stream) {
-      ProcessFunction<T, R> trProcessFunction = ;
       return stream
          .map(new MapFunction<CustomMessage.Order, Tuple2<String, Integer>>() {
             @Override
@@ -104,8 +102,6 @@ public class FlinkAggregator {
       });
 
       calculateTopCountries(eventsStream)
-         .process()
-
          .addSink(new DBSink(COUNTRY_STATS));
       calculateTotalOrders(eventsStream)
          .addSink(new DBSink(TOTAL_ORDERS));
